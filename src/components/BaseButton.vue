@@ -10,9 +10,9 @@ defineProps({
   },
   icon: {
     type: Object,
-  }
+  },
 })
-defineEmits(['click']);
+defineEmits(['click'])
 </script>
 
 <template>

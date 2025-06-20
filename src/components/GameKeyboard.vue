@@ -1,45 +1,45 @@
 <script setup>
-import BaseButton from '@/components/BaseButton.vue';
-import { useCells } from '@/composables/useCells';
-import { onMounted, onUnmounted } from 'vue';
+import BaseButton from '@/components/BaseButton.vue'
+import { useCells } from '@/composables/useCells'
+import { onMounted, onUnmounted } from 'vue'
 
-const { cells, activeCell } = useCells();
+const { cells, activeCell } = useCells()
 
 const handleButtonClick = (value) => {
   if (!activeCell.value) {
-    return;
+    return
   }
 
-  const cell = cells.value.flat().find(cell => cell.id === activeCell.value.id);
+  const cell = cells.value.flat().find((cell) => cell.id === activeCell.value.id)
 
   if (cell) {
-    if (cell.default) return;
+    if (cell.default) return
 
-    cell.value = +value;
+    cell.value = +value
   }
 }
 
 const handleCellClear = () => {
   if (!activeCell.value) {
-    return;
+    return
   }
 
-  const cell = cells.value.flat().find(cell => cell.id === activeCell.value.id);
+  const cell = cells.value.flat().find((cell) => cell.id === activeCell.value.id)
 
   if (cell) {
-    if (cell.default) return;
+    if (cell.default) return
 
-    cell.value = null;
+    cell.value = null
   }
 }
 
 const handleKeydown = (event) => {
   if (/^[1-9]$/.test(event.key)) {
-    handleButtonClick(event.key);
+    handleButtonClick(event.key)
   }
 
   if (event.key === 'Backspace') {
-    handleCellClear();
+    handleCellClear()
   }
 }
 

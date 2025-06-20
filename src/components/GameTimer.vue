@@ -1,8 +1,7 @@
 <script setup>
-import { useTimer } from '@/composables/useTimer';
+import { useTimer } from '@/composables/useTimer'
 
 const { time } = useTimer()
-
 </script>
 
 <template>

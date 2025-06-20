@@ -1,7 +1,7 @@
 <script setup>
-import MainLogo from '@/components/MainLogo.vue';
-import GameField from '@/components/GameField.vue';
-import GameRules from '@/components/GameRules.vue';
+import MainLogo from '@/components/MainLogo.vue'
+import GameField from '@/components/GameField.vue'
+import GameRules from '@/components/GameRules.vue'
 </script>
 
 <template>

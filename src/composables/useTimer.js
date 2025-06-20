@@ -30,9 +30,7 @@ export const useTimer = () => {
     const minutes = Math.floor(currentTime.value / 60)
       .toString()
       .padStart(2, '0')
-    const seconds = (currentTime.value % 60)
-      .toString()
-      .padStart(2, '0')
+    const seconds = (currentTime.value % 60).toString().padStart(2, '0')
     return `${minutes}:${seconds}`
   })
 

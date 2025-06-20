@@ -1,12 +1,12 @@
 <script setup>
-import GameTimer from '@/components/GameTimer.vue';
-import GameControl from '@/components/GameControl.vue';
-import GameGrid from '@/components/GameGrid.vue';
-import GameKeyboard from '@/components/GameKeyboard.vue';
-import { ref } from 'vue';
-import LevelSelect from './LevelSelect.vue';
+import GameTimer from '@/components/GameTimer.vue'
+import GameControl from '@/components/GameControl.vue'
+import GameGrid from '@/components/GameGrid.vue'
+import GameKeyboard from '@/components/GameKeyboard.vue'
+import { ref } from 'vue'
+import LevelSelect from './LevelSelect.vue'
 
-const fieldDisabled = ref(true);
+const fieldDisabled = ref(true)
 
 const difficulties = [
   {
@@ -24,20 +24,22 @@ const difficulties = [
   },
 ]
 
-const selectedDifficulty = ref(difficulties.find(dif => dif.default).cells);
-
+const selectedDifficulty = ref(difficulties.find((dif) => dif.default).cells)
 </script>
 
 <template>
   <div class="field">
     <LevelSelect v-model="selectedDifficulty" :difficulties="difficulties" />
     <GameTimer class="field__timer" />
-    <GameControl v-model="fieldDisabled" :selected-difficulty="selectedDifficulty" class="field__controls" />
+    <GameControl
+      v-model="fieldDisabled"
+      :selected-difficulty="selectedDifficulty"
+      class="field__controls"
+    />
     <GameGrid :disabled="fieldDisabled" class="field__grid" />
     <GameKeyboard />
   </div>
 </template>
-
 
 <style scoped>
 .field__timer {

@@ -1,27 +1,32 @@
 <script setup>
-import CrossIcon from '@/assets/images/cross.svg';
-import BaseButton from './BaseButton.vue';
-import { ref } from 'vue';
+import CrossIcon from '@/assets/images/cross.svg'
+import BaseButton from './BaseButton.vue'
+import { ref } from 'vue'
 
-const isOpen = ref(false);
+const isOpen = ref(false)
 
 const close = () => {
-  isOpen.value = false;
+  isOpen.value = false
 }
 
 const open = () => {
-  isOpen.value = true;
+  isOpen.value = true
 }
 
 defineExpose({ open, close })
 </script>
 
 <template>
-  <Teleport to='body'>
+  <Teleport to="body">
     <Transition name="popup">
       <div v-if="isOpen" class="popup">
         <div class="popup__content">
-          <BaseButton class="popup__close" aria-label="Закрыть модальное окно" :icon="CrossIcon" @click="close" />
+          <BaseButton
+            class="popup__close"
+            aria-label="Закрыть модальное окно"
+            :icon="CrossIcon"
+            @click="close"
+          />
           <div class="popup__inner">
             <slot></slot>
           </div>

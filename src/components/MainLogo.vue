@@ -4,8 +4,8 @@ import LogoSrc from '@/assets/images/logo.png'
 
 <template>
   <div class="logo">
-      <img :src="LogoSrc" alt="Судоку">
-    </div>
+    <img :src="LogoSrc" alt="Судоку" />
+  </div>
 </template>
 
 <style scoped>

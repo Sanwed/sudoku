@@ -6,13 +6,12 @@ defineProps({
   },
 })
 
-const selected = defineModel();
+const selected = defineModel()
 </script>
 
 <template>
   <select v-model="selected" name="difficulty" id="difficulty" class="select">
-    <option v-for="dif in difficulties" :value="dif.cells" :key="dif.name">{{ dif.name }}
-    </option>
+    <option v-for="dif in difficulties" :value="dif.cells" :key="dif.name">{{ dif.name }}</option>
   </select>
 </template>
 

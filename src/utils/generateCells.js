@@ -1,9 +1,9 @@
 export const generateCells = () => {
-  const cells = [];
+  const cells = []
   for (let row = 0; row < 9; row++) {
-    const currentRow = [];
+    const currentRow = []
     for (let column = 0; column < 9; column++) {
-      const square = Math.floor(row / 3) * 3 + Math.floor(column / 3);
+      const square = Math.floor(row / 3) * 3 + Math.floor(column / 3)
       currentRow.push({
         id: `r${row}c${column}`,
         value: null,
@@ -13,9 +13,9 @@ export const generateCells = () => {
         active: false,
         error: false,
         default: false,
-      });
+      })
     }
-    cells.push(currentRow);
+    cells.push(currentRow)
   }
-  return cells;
+  return cells
 }
